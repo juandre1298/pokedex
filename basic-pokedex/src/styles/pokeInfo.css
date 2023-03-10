@@ -1,0 +1,66 @@
+.pageInfo {
+  padding-top: 150px;
+}
+.detailCard {
+  display: flex;
+  background-color: lightgoldenrodyellow;
+  padding: 30px;
+  width: 800px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.detailSectionPokeImg {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.detailSectionPokeImg img {
+  width: 300px;
+}
+.DetailSectionInfo {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.DetailSectionInfo p {
+  text-align: justify;
+}
+.PokemonInput {
+  width: 150px;
+  height: 15px;
+}
+.generalInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+}
+.rightSection img {
+  height: 80px;
+  object-fit: none;
+}
+.types {
+  display: flex;
+  gap: 5px;
+}

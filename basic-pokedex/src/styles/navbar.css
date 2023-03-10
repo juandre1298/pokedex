@@ -1,0 +1,80 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #ce2211;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+  top: 0px;
+}
+.navbarButtons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: black;
+}
+.pokedexIcon {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 40px;
+}
+
+.searchSection {
+  display: flex;
+  align-items: center;
+}
+.searchSection input {
+  border-radius: 20px 0px 0px 20px;
+  padding: 10px;
+  padding-left: 15px;
+  border: none;
+  font-size: 18px;
+}
+.searchSection input:focus {
+  border: none;
+  outline: none;
+}
+.searchSection button {
+  border-radius: 0px 20px 20px 0px;
+  border: none;
+  padding: 10px;
+  background-color: #222831;
+  border: none;
+  cursor: pointer;
+}
+.searchSection button:hover {
+  background-color: #313947;
+}
+.searchSection button:active {
+  background-color: #48556a;
+}
+.paginationSection {
+  z-index: 1000;
+}
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+}
+
+.pagination-Btn {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  background-color: #222831;
+  border: none;
+  cursor: pointer;
+  color: wheat;
+  font-weight: bold;
+}

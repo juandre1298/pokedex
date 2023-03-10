@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  text-transform: capitalize;
+  font-family: "Nintendo DS BIOS", sans-serif;
+}
+h1 {
+  text-transform: capitalize;
+  font-family: "Pokemon Solid", sans-serif;
+}
+.App {
+  text-align: center;
+}
+h3,
+h2,
+h1 {
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
+}
