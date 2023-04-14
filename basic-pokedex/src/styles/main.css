@@ -1,7 +1,7 @@
 .displaySection {
   margin-top: 130px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(50px, auto);
   grid-gap: 10px;
 }
