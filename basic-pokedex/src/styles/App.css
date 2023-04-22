@@ -2,6 +2,7 @@
   margin: 0;
   text-transform: capitalize;
   font-family: "Nintendo DS BIOS", sans-serif;
+  list-style-type: none;
 }
 h1 {
   text-transform: capitalize;

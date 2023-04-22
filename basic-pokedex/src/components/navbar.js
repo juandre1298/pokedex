@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Pagination from "./pagination";
 
 export const Navbar = (props) => {
-  const { pokeName, setPokeName, total, page, pageNext, pagePrevious } = props;
+  const { pokeName, setPokeName, total, page } = props;
   const [pokemonInput, setPokemonInput] = useState("");
 
   const setNewPokemon = () => {
@@ -27,12 +26,6 @@ export const Navbar = (props) => {
         <button onClick={setNewPokemon}>&#128269;</button>
       </div>
 
-      <Pagination
-        onLeftClick={pagePrevious}
-        onRightClick={pageNext}
-        page={page + 1}
-        totalPages={total}
-      />
       <div className="navbarButtons">
         <Link to="/">Home</Link>
         <Link to="/pokeInfo">Search Pokemon</Link>
