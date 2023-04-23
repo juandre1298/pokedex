@@ -5,6 +5,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { getPokemons } from "./../components/api";
 import { colors } from "../components/colors";
 import { useRef } from "react";
+import { PokemonCard } from "../components/pokemonCard";
+import { Details } from "../components/Details";
 
 export const Main = (props) => {
   const { setPokeName, pokeName, pokeList, setPokeList } = props;
@@ -16,16 +18,19 @@ export const Main = (props) => {
       { length: (stop - start) / step + 1 },
       (value, index) => start + index * step
     );
+
   const fetchMorePokemon = () => {
-    setPokeList(
-      pokeList.concat(
-        arrayRange(
-          parseInt(pokeList.slice(-1)),
-          parseInt(pokeList.slice(-1)) + 20
+    setTimeout(() => {
+      setPokeList(
+        pokeList.concat(
+          arrayRange(
+            parseInt(pokeList.slice(-1)),
+            parseInt(pokeList.slice(-1)) + 20,
+            1
+          )
         )
-      )
-    );
-    console.log(pokeList.slice(-1));
+      );
+    }, 500);
   };
   // to make the scroll in one dive
   const scrollRef = useRef(null);
@@ -70,77 +75,33 @@ export const Main = (props) => {
       scrollContainer.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="displaySection">
-      {/*       <button onClick={() => setLoading(loading ? false : true)}>
-        refresh
-      </button> */}
-      {loading ? (
-        <div>loading...</div>
-      ) : (
-        <div ref={scrollRef} className="pokemonList">
-          <InfiniteScroll
-            dataLength={pokeList.length}
-            next={fetchMorePokemon}
-            hasMore={true}
-            loader={<h4>loading... pokemons</h4>}
-            endMessage={<p>No more pokemons.</p>}
-            scrollableTarget={scrollRef.current}
-          >
-            <div>
-              {pokeList.map((object, i) => {
-                return (
-                  <DisplayPokeInfo
-                    pokemon={object}
-                    setPokeName={setPokeName}
-                    key={i}
-                    ydist={i + 1}
-                  />
-                );
-              })}
-            </div>
-          </InfiniteScroll>
-        </div>
-      )}
-    </div>
-  );
-};
-
-const DisplayPokeInfo = (props) => {
-  const { setPokeName, ydist } = props;
-  const [pokeInfo, setPokeInfo] = useState({});
-
-  useEffect(() => {
-    getPokeInfo(props.pokemon).then((val) => setPokeInfo(val));
-  }, []);
-
-  const linkToMoreInfo = () => {
-    setPokeName(pokeInfo.species);
-  };
-
-  return (
-    <Link onClick={linkToMoreInfo} to="/pokeInfo">
-      <div className="PokemonCard" key={pokeInfo.id} id={ydist}>
-        <div className="PokemonInfo">
-          <h1 className="pokemonName">{pokeInfo.species}</h1>
-          {/* <img className="pokemonImgMin" src={pokeInfo.img1} /> */}
-          <div className="pokemonTypes">
-            {pokeInfo.types?.map((type, i) => (
-              <h3
-                className="pokemonType"
-                key={i}
-                style={colors[type.type.name]}
-              >
-                {type.type.name}
-              </h3>
-            ))}
+      <div ref={scrollRef} className="pokemonList">
+        <InfiniteScroll
+          dataLength={pokeList.length}
+          next={fetchMorePokemon()}
+          hasMore={true}
+          loader={<h4>loading more pokemons</h4>}
+          endMessage={<p>No more pokemons.</p>}
+          scrollableTarget={scrollRef.current}
+        >
+          <div>
+            {pokeList.map((object, i) => {
+              return (
+                <PokemonCard
+                  pokemon={object}
+                  setPokeName={setPokeName}
+                  key={i}
+                  ydist={i + 1}
+                />
+              );
+            })}
           </div>
-        </div>
-
-        <p className="pokemonId">#{pokeInfo.id}</p>
-
-        <img className="pokemonImg" src={pokeInfo.img} />
+        </InfiniteScroll>
       </div>
-    </Link>
+      <Details pokeName={pokeName} />
+    </div>
   );
 };

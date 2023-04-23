@@ -27,10 +27,6 @@ function App() {
     fetchPokemons();
     setPokeList(arrayRange(1, 30, 1));
   }, []);
-  // load more pages
-  /*   useEffect(() => {
-    setPokeList(arrayRange(page * 30 + 1, page * 40 + 30, 1));
-  }, [page]); */
 
   const arrayRange = (start, stop, step) =>
     Array.from(

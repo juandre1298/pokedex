@@ -1,7 +1,7 @@
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import { getPokeDetailInfo } from "../components/getPokeDetailInfo";
-import { getPokeInfo } from "../components/getPokeInfo";
+import { getPokeDetailInfo } from "./../components/getPokeDetailInfo";
+import { getPokeInfo } from "./../components/getPokeInfo";
 
 export const PokeInfo = (props) => {
   const { colors, pokeName } = props;

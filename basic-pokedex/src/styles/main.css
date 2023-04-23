@@ -1,4 +1,6 @@
 .displaySection {
+  display: flex;
+  justify-content: space-between;
 }
 
 .pokemonList {
@@ -20,27 +22,19 @@
   color: black;
   justify-content: space-evenly;
   position: relative;
-
   transition: transform 300ms;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.middleUp2Element:hover {
-  transform: scale(1.5, 1.5);
-}
+
 .middleUp2Element {
   transform: scale(1, 1);
 }
 
-.middleUpElement:hover {
-  transform: scale(1.5, 1.5);
-}
 .middleUpElement {
   transform: scale(1.3, 1.3);
   z-index: 50;
 }
-.middleElement:hover {
-  transform: scale(1.5, 1.5);
-}
+
 .middleElement {
   transform: scale(1.5, 1.5);
   overflow: visible;
@@ -51,7 +45,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   transform: scale(1.5, 1.5);
   z-index: 110;
-  animation: tilt-shaking 0.25s infinite;
+  animation: tilt-shaking 0.3s infinite;
 }
 @keyframes tilt-shaking {
   0% {
@@ -112,4 +106,12 @@
   height: 18px;
   border-radius: 4px;
   color: #f8f8f8;
+}
+.detailsPokemon {
+  height: 100vh;
+  width: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
