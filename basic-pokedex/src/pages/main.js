@@ -24,7 +24,7 @@ export const Main = (props) => {
       setPokeList(
         pokeList.concat(
           arrayRange(
-            parseInt(pokeList.slice(-1)),
+            parseInt(pokeList.slice(-1)) + 1,
             parseInt(pokeList.slice(-1)) + 20,
             1
           )
